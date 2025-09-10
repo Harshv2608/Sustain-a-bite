@@ -1,5 +1,5 @@
 // Fetch matches from the backend
-fetch('https://sustain-a-bite-backend.onrender.com/get-matches')
+fetch('https://sustain-a-bite-backend.onrender.com/match')
     .then(response => response.json())
     .then(data => {
         if (data.success) {
