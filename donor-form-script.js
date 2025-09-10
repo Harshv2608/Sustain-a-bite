@@ -13,7 +13,7 @@ document.getElementById("donorForm").addEventListener("submit", function(event) 
 
     console.log("Donor data to be sent:", donorData);
 
-    fetch('http://localhost:3000/donor', {
+    fetch('https://sustain-a-bite-backend.onrender.com/donor', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

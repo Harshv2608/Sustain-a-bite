@@ -12,7 +12,7 @@ document.getElementById("recipientForm").addEventListener("submit", function(eve
 
     console.log("Recipient data to be sent:", recipientData);
 
-    fetch('http://localhost:3000/recipient', {
+    fetch('https://sustain-a-bite-backend.onrender.com/recipient', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
