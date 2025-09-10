@@ -44,17 +44,3 @@ th {
 tr:hover {
     background-color: #060606;
 }
-button {
-    padding: 14px 20px;
-    font-size: 16px;
-    background-color: #2f5031;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #4CAF50;
-}
