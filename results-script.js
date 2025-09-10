@@ -52,4 +52,19 @@ fetch('https://sustain-a-bite-backend.onrender.com/get-matches')
     .catch(error => {
         console.error('Error fetching matches:', error);
     });
-    
+    document.getElementById("matchButton").addEventListener("click", () => {
+            fetch("https://sustain-a-bite-backend.onrender.com/match", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            
+            .catch(error => {
+                console.error("Error:", error);
+                document.getElementById("response").innerHTML = `
+                    <h3>Error</h3>
+                    <p>${error.message}</p>
+                `;
+            });
+        });
