@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Food Donation Platform</title>
+    <link rel="stylesheet" href="mainpage.css">
+    <script src="mainpage.js" defer></script>
+</head>
+
+<body>
+
+    <div class="overlay" id="overlay">
+        <div class="loading">Loading...</div>
+    </div>
+
+    <header>
+        <div class="navbar">
+            <h1>Sustain-A-Bite</h1>
+            <div class="scrolling-text">
+                <p>Join us in reducing food waste and helping those in need! Our platform connects donors with those in need, redistributing surplus food to fight hunger. Be part of the change!</p>
+            </div>
+            <div id="welcome-message" class="welcome-message"></div> 
+        </div>
+    </header>
+
+    <section class="intro">
+        <h2>Welcome to Our Platform</h2>
+        <p>Our mission is to help reduce food waste by connecting donors with those in need. Whether you're a donor with surplus food or a recipient in need, we are here to help!</p>
+        <p>Select your role to get started:</p>
+    </section>
+
+    <section class="role-selection">
+        <div class="shine-border">
+            <div class="shine-border-content">
+                <img src="login1.png" alt="Donor" class="role-image">
+                <h3>I'm a Donor</h3>
+                <p>I have extra food to donate.</p>
+                <button onclick="navigateToContinue('donor')">Continue as Donor</button>
+            </div>
+        </div>
+    
+        <div class="shine-border">
+            <div class="shine-border-content">
+                <img src="login3.jpg" alt="Recipient" class="role-image">
+                <h3>I'm a Recipient</h3>
+                <p>I need food to distribute.</p>
+                <button onclick="navigateToContinue('recipient')">Continue as Recipient</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Food Donation Platform | All rights reserved.</p>
+    </footer>
+
+    <!-- Firebase authentication script to show welcome username -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBktRp65wnSoYDfbyN5m93Okc9i9gTIYP4",
+            authDomain: "tourihstan.firebaseapp.com",
+            databaseURL: "https://tourihstan-default-rtdb.firebaseio.com/",
+            projectId: "tourihstan",
+            storageBucket: "tourihstan.appspot.com",
+            messagingSenderId: "105526988247",
+            appId: "1:105526988247:web:6faf73db54be5657b20f92"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Function to display welcome message with user's email
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const welcomeMessage = document.getElementById("welcome-message");
+                welcomeMessage.textContent = `Welcome, ${user.email}!`;
+            } else {
+                // Optionally redirect to login page if not logged in
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation Matches</title>
+    <link rel="stylesheet" href="results-style.css">
+</head>
+<body>
+    <header>
+        <h1>Donation Matches</h1>
+    </header>
+    <main>
+        <section id="donor-section">
+            <h2>Matches for Donors</h2>
+            <table id="donor-table">
+                <thead>
+                    <tr>
+                        <th>Donor</th>
+                        <th>Food Type</th>
+                        <th>Quantity Transferred</th>
+                        <th>Recipient</th>
+                        <th>Recipient Location</th>
+                        <th>Expiration Date</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Donor matches will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="recipient-section">
+            <h2>Matches for Recipients</h2>
+            <table id="recipient-table">
+                <thead>
+                    <tr>
+                        <th>Recipient</th>
+                        <th>Food Type</th>
+                        <th>Quantity Received</th>
+                        <th>Donor</th>
+                        <th>Donor Contact</th>
+                        <th>Expiration Date</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Recipient matches will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="results-script.js"></script>
+</body>
+</html>

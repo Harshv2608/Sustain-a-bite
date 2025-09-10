@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Form - Food Donation Platform</title>
+    <link rel="stylesheet" href="form-style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <h1>Donor Form</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <form id="donorForm">
+            <label for="restaurantName">Restaurant Name</label>
+            <input type="text" id="restaurantName" name="restaurantName" required>
+
+            <label for="foodType">Food Type</label>
+            <input type="text" id="foodType" name="foodType" required>
+
+            <label for="quantity">Quantity (kg)</label>
+            <input type="number" id="quantity" name="quantity" required min="1" step="1">
+
+            <label for="location">Location</label>
+            <select id="location" name="location" required>
+                <option value="">Select a location</option>
+                <option value="Adyar">Adyar</option>
+                <option value="Anna Nagar">Anna Nagar</option>
+                <option value="T. Nagar">T. Nagar</option>
+                <option value="Velachery">Velachery</option>
+                <option value="Nungambakkam">Nungambakkam</option>
+                <option value="Tambaram">Tambaram</option>
+                <option value="Mylapore">Mylapore</option>
+                <option value="Porur">Porur</option>
+                <option value="Ambattur">Ambattur</option>
+                <option value="Perambur">Perambur</option>
+            </select>
+
+            <label for="expirationDate">Expiration Date</label>
+            <input type="date" id="expirationDate" name="expirationDate" required>
+
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority" required>
+                <option value="urgent">Urgent</option>
+                <option value="normal">Normal</option>
+            </select>
+
+            <label for="contactInfo">Phone Number</label>
+            <input type="text" id="contactInfo" name="contactInfo" required>
+
+            <button type="submit">Submit Donation</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Food Donation Platform | All rights reserved.</p>
+    </footer>
+
+    <script src="donor-form-script.js"></script>
+
+</body>
+
+</html>

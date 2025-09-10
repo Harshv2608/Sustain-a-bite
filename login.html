@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+        <img src="login1.png" alt="Stethoscope">
+        <img src="login2.jpg" alt="Syringe">
+        <img src="login3.jpg" alt="Heart Monitor">
+    </div>
+
+    <!-- Main Auth Section -->
+    <section id="auth-section" class="auth-section">
+        <div class="shine-border">
+            <div class="shine-border-content">
+                <!-- Login Card -->
+                <div id="login-card" class="auth-card">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                    <p class="auth-switch-prompt">New to Sustain-A-Bite <a href="#" id="show-signup">Sign Up</a></p>
+                </div>
+
+                <!-- Sign Up Card -->
+                <div id="signup-card" class="auth-card" style="display: none;">
+                    <h2>Sign Up</h2>
+                    <form id="signupForm">
+                        <div class="form-group">
+                            <label for="signupEmail">Email</label>
+                            <input type="email" id="signupEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" id="signupPassword" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                    <p class="auth-switch-prompt">Already have an account? <a href="#" id="show-login">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBktRp65wnSoYDfbyN5m93Okc9i9gTIYP4",
+            authDomain: "tourihstan.firebaseapp.com",
+            databaseURL: "https://tourihstan-default-rtdb.firebaseio.com/",
+            projectId: "tourihstan",
+            storageBucket: "tourihstan.appspot.com",
+            messagingSenderId: "105526988247",
+            appId: "1:105526988247:web:6faf73db54be5657b20f92"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Function to handle sign-up
+        async function handleSignUp(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("signupEmail").value;
+            const password = document.getElementById("signupPassword").value;
+
+            try {
+                await createUserWithEmailAndPassword(auth, email, password);
+                alert("Sign-up successful!");
+                document.getElementById("signupForm").reset();
+                window.location.href = "mainpage.html";
+            } catch (error) {
+                console.error("Error during sign-up: ", error.message);
+                alert("An error occurred. Please try again.");
+            }
+        }
+
+        // Function to handle login
+        async function handleLogin(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                alert("Login successful!");
+                window.location.href = "mainpage.html";
+            } catch (error) {
+                console.error("Error during login: ", error.message);
+                alert("An error occurred. Please try again.");
+            }
+        }
+
+        // Add event listeners to form submissions
+        document.getElementById("loginForm").addEventListener("submit", handleLogin);
+        document.getElementById("signupForm").addEventListener("submit", handleSignUp);
+
+        // Show the sign-up card
+        document.getElementById("show-signup").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("login-card").style.display = "none";
+            document.getElementById("signup-card").style.display = "block";
+        });
+
+        // Show the login card
+        document.getElementById("show-login").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("signup-card").style.display = "none";
+            document.getElementById("login-card").style.display = "block";
+        });
+    </script>
+</body>
+</html>

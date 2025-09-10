@@ -1,0 +1,186 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1d1e1e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Main Auth Section */
+.auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Floating Icons */
+.floating-icons img {
+    position: absolute;
+    width: 80px;
+    opacity: 1; /* Reduced opacity for a subtle effect */
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-icons img:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-duration: 8s;
+}
+
+.floating-icons img:nth-child(2) {
+    bottom: 15%;
+    left: 20%;
+    animation-duration: 7s;
+}
+
+.floating-icons img:nth-child(3) {
+    top: 40%;
+    right:10%;
+    animation-duration: 6s;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Ultra-Thin Glowing Gradient Border */
+.shine-border {
+    position: relative;
+    width: 600px;  /* Increased width */
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 25px;
+}
+
+.shine-border::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(transparent, transparent, transparent, #78ba80, #469135, #1b4b16);
+    animation: rotate 8s linear infinite;
+    opacity: 0.3; /* Softer glow */
+}
+
+/* **Ultra-Thin Border Effect** */
+.shine-border-content {
+    position: relative;
+    inset: 2px; /* **Almost invisible glow** */
+    border-radius: 12px;
+    background-color: #2e2e2e;
+    padding: 40px 40px;
+    text-align: center;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.2); /* Thinner, subtle glow */
+}
+
+/* Card Styling */
+.auth-card {
+    position: relative;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.07); /* Slightly transparent */
+    border-radius: 12px;
+    text-align: center;
+    max-width: 600px; /* **Wider Card** */
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+/* Heading Styles */
+h2 {
+    color: #4CAF50;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+    color: #ddd;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #fff;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Button Styles */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #0fc044;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #1a9346;
+}
+
+/* Prompt Text Styles */
+.auth-switch-prompt {
+    font-size: 16px;
+}
+
+.auth-switch-prompt a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.auth-switch-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes rotate {
+    100% { transform: rotate(1turn); }
+}
+
+@keyframes floatIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Match Endpoint</title>
+</head>
+<body>
+    <h1>Test Match Endpoint</h1>
+    <button id="matchButton">Run Matching Algorithm</button>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById("matchButton").addEventListener("click", () => {
+            fetch("http://localhost:3000/match", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                document.getElementById("response").innerHTML = `
+                    <h3>Response</h3>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                document.getElementById("response").innerHTML = `
+                    <h3>Error</h3>
+                    <p>${error.message}</p>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
