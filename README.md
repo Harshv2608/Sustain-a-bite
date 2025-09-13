@@ -68,7 +68,26 @@ This project uses **Firebase Authentication**.
 
 ## 📸 Screenshots
 
-> _(Add screenshots here once available — UI of donor form, recipient form, and results page)_  
+### Landing Page
+<img width="1879" height="831" alt="image" src="https://github.com/user-attachments/assets/59709cb4-c74e-497a-98e3-08559a5e8eb1" />
+<img width="1884" height="826" alt="image" src="https://github.com/user-attachments/assets/4edf8199-0a95-4ff7-987a-7e9aa56ed93d" />
+<img width="1880" height="794" alt="image" src="https://github.com/user-attachments/assets/8c8be548-dba8-45a8-b558-62cec1fdec14" />
+<img width="1892" height="816" alt="image" src="https://github.com/user-attachments/assets/e9d2bbe0-ddfe-4758-bd4e-db8e31a21dc2" />
+
+### Login/SignUp Pages
+<img width="1919" height="817" alt="image" src="https://github.com/user-attachments/assets/76c34df2-78d6-44d8-ad20-c37ca7933ec3" />
+
+### Main Page
+<img width="1887" height="826" alt="image" src="https://github.com/user-attachments/assets/96a68e48-9caf-4351-a81a-b3d4b9f517dc" />
+
+### Donor Form
+<img width="1900" height="816" alt="image" src="https://github.com/user-attachments/assets/502b7c9a-5435-45f3-901e-ce4aa3c56c4b" />
+
+### Recipient Form
+<img width="1895" height="824" alt="image" src="https://github.com/user-attachments/assets/fd3cf3aa-3622-4e0f-95ce-2eb891bb23da" />
+
+### Result Page
+<img width="1884" height="832" alt="image" src="https://github.com/user-attachments/assets/f9ab60aa-d603-4cbf-9d50-a00f86e9ae9a" />
 
 ---
 
